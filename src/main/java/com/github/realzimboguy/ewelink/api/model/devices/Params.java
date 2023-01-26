@@ -46,6 +46,7 @@ public class Params {
     private String temperature;
     private String humidity;
 
+    private Integer lock;
 
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -339,6 +340,16 @@ public class Params {
 
     public void setAdditionalProperties(Map<String, Object> additionalProperties) {
         this.additionalProperties = additionalProperties;
+    }
+
+    public Boolean isLocked() {
+        if (lock != null && lock == 0){
+            return true;
+        }
+        if (lock != null && lock == 1){
+            return false;
+        }
+        return null;
     }
 
     @Override
